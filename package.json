@@ -1,0 +1,23 @@
+{
+  "name": "gulp-recipe-css",
+  "version": "0.1.0",
+  "description": "Recipe handling hooks for css processing in development",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PGS-dev/gulp-recipe-css.git"
+  },
+  "keywords": [
+    "PGS",
+    "gulp",
+    "gulp-receipe",
+    "css",
+    "development"
+  ],
+  "author": "PGS Front",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp-sourcemaps": "^1.5.0"
+  }
+}
