@@ -9,7 +9,7 @@ module.exports = function ($, config) {
         },
         tasks: {
             css: 'css',
-            watchCss: 'wath:css'
+            watchCss: 'watch:css'
         },
         sources: {
             css: []
