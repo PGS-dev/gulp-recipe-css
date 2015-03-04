@@ -1,24 +1,15 @@
 'use strict';
 
 /**
- * Handle hooks for css processing in development with watcher firing only on changed files
+ * Css transforming hook provider.
+ *
+ * Provides hook for css processing and watcher firing only on changed files in development environment.
+ * Provides source maps as data urls inside compiled files.
+ * Works well with recipes like [gulp-recipe-autoprefixer](https://github.com/PGS-dev/gulp-recipe-autoprefixer).
  *
  * @config paths.tmp temp folder path
  */
 module.exports = function ($, config, sources) {
-
-    /* Provided hooks
-     *****************/
-
-    /**
-     * Sequential tasks for css processing.
-     *
-     * @hook pipes.devProcessCss*
-     * @hookType sequential
-     */
-    function getHook() {
-        return $.utils.sequentialLazypipe($.utils.getPipes('devProcessCss'));
-    }
 
     /* Tasks
      ********/
@@ -32,7 +23,7 @@ module.exports = function ($, config, sources) {
     function cssTask() {
         return sources.css
             .pipe($.sourcemaps.init)
-            .pipe(getHook())
+            .pipe(devProcessCssHook())
             .pipe($.sourcemaps.write)
             .pipe($.gulp.dest, config.paths.tmp)();
     }
@@ -47,7 +38,7 @@ module.exports = function ($, config, sources) {
     function watchCssTask() {
         $.utils.watchSource(sources.css)
             .pipe($.sourcemaps.init)
-            .pipe(getHook())
+            .pipe(devProcessCssHook())
             .pipe($.sourcemaps.write)
             .pipe($.gulp.dest, config.paths.tmp)();
     }
@@ -55,6 +46,19 @@ module.exports = function ($, config, sources) {
     // register tasks
     $.utils.maybeTask(config.tasks.watchCss, [config.tasks.css], watchCssTask);
     $.utils.maybeTask(config.tasks.css, cssTask);
+
+    /* Provided hooks
+     *****************/
+
+    /**
+     * Sequential tasks for css processing.
+     *
+     * @hook pipes.devProcessCss*
+     * @hookType sequential
+     */
+    function devProcessCssHook() {
+        return $.utils.sequentialLazypipe($.utils.getPipes('devProcessCss'));
+    }
 
     /* Used hooks
      *************/
