@@ -15,7 +15,7 @@ module.exports = function ($, config, sources) {
      ********/
 
     /**
-     * Run all hooked actions on all css files and save to temp
+     * Runs all hooked actions on all css files and saves them to configured temp directory.
      *
      * @task css
      * @config tasks.css css task name
@@ -29,7 +29,7 @@ module.exports = function ($, config, sources) {
     }
 
     /**
-     * Watches all css files and runs hooked actions only on changed files
+     * Starts Watching all css files and runs hooked actions only on changed files.
      *
      * @task watch:css
      * @config tasks.watchCss watch:css task name

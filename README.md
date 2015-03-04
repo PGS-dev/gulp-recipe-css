@@ -9,12 +9,10 @@ Works well with recipes like [gulp-recipe-autoprefixer](https://github.com/PGS-d
 
 ## Tasks
 #### css
-
-Run all hooked actions on all css files and save to temp
+Runs all hooked actions on all css files and saves them to configured temp directory.
 
 #### watch:css
-
-Watches all css files and runs hooked actions only on changed files
+Starts Watching all css files and runs hooked actions only on changed files.
 
 ## Configuration
 ### Sources
