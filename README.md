@@ -4,7 +4,7 @@
 Css transforming hook provider.
 
 Provides hook for css processing and watcher firing only on changed files in development environment.
-Provides source maps as data urls inside compiled files.
+Includes source maps as data urls into compiled files.
 Works well with recipes like [gulp-recipe-autoprefixer](https://github.com/PGS-dev/gulp-recipe-autoprefixer).
 
 ## Tasks
