@@ -17,7 +17,7 @@ Starts Watching all css files and runs hooked actions only on changed files.
 ## Configuration
 ### Sources
 #### sources.css
-> default: 'css'
+> mandatory
 
 Raw css files to be compiled by all css transformers.
 
