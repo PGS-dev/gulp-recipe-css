@@ -22,7 +22,7 @@ Starts Watching all css files and runs hooked actions only on changed files.
 Raw css files to be compiled by all css transformers.
 
 ### Paths
-> paths.tmp
+#### paths.tmp
 > default: 'tmp/'
 
 Compiled css output directory.
@@ -54,4 +54,4 @@ Exports watch:css task to watch combiner.
 [npm-image]: https://nodei.co/npm/gulp-recipe-css.png?downloads=true
 
 [depstat-url]: https://david-dm.org/PGS-dev/gulp-recipe-css
-[depstat-image]: http://img.shields.io/david/PGS-dev/gulp-recipe-css.svg?style=flat
+[depstat-image]: https://img.shields.io/david/PGS-dev/gulp-recipe-css.svg?style=flat
