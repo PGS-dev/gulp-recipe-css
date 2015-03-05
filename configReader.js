@@ -3,9 +3,7 @@
 module.exports = function ($, config) {
     var _ = $.lodash;
 
-    if(_.isUndefined(config.sources.css)) {
-        throw new $.utils.RecipeError('Mandatory config field `config.sources.css` is missing.');
-    }
+    $.utils.checkMandatory(config, ['sources.css']);
 
     return _.merge({
         paths: {
