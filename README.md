@@ -15,7 +15,7 @@ Runs all hooked actions on all css files and saves them to configured temp direc
 Starts Watching all css files and runs hooked actions only on changed files.
 
 ## Configuration
-### Sources
+### [Sources](https://github.com/PGS-dev/gulp-recipe-loader#sources-configuration-syntax)
 #### sources.css
 > mandatory
 
