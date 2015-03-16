@@ -36,7 +36,14 @@ module.exports = function ($, config, sources) {
      * @deps css
      */
     function watchCssTask() {
-        $.utils.watchSource(sources.css)
+        var path = require('path');
+        var fs = require('fs');
+
+        $.utils.watchSource(sources.css, function (vinyl) {
+            if(vinyl.event === 'unlink') {
+                fs.unlink(path.join(config.paths.tmp, path.relative(vinyl.base, vinyl.path)));
+            }
+        })
             .pipe($.sourcemaps.init)
             .pipe(devProcessCssHook())
             .pipe($.sourcemaps.write)
