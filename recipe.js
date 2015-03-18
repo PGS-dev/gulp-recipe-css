@@ -75,6 +75,9 @@ module.exports = function ($, config, sources) {
          *
          * @hooks watch
          */
-        watch: config.tasks.watchCss
+        watch: config.tasks.watchCss,
+        pipes: {
+            assetCss: sources.css
+        }
     }
 };
