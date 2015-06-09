@@ -5,7 +5,7 @@
   "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PGS-dev/gulp-recipe-css.git"
+    "url": "https://github.com/PGSSoft/gulp-recipe-css.git"
   },
   "keywords": [
     "PGS",
